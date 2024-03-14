@@ -11,6 +11,13 @@ categories = ["command-line-utilities"]
 default-run = "slack-exporter"
 rust-version = "1.76.0"
 
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/bin/main.rs"
+name = "slack-exporter"
+
 [dependencies]
 clap = { version = "4.5.2", features = ["derive", "env", "wrap_help", "cargo", "color", "help"] }
 reqwest = { version = "0.11.26", features = ["json"] }

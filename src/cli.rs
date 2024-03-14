@@ -23,7 +23,12 @@ pub struct Cli {
     // pub include_channels: Option<Vec<String>>,
 
     /// Default delay before resending a request when there is a throw limit
-    #[arg(short = 'd', long = "request-delay", required = false, default_value = "1200")]
+    #[arg(
+        short = 'd',
+        long = "request-delay",
+        required = false,
+        default_value = "1200"
+    )]
     pub request_delay: i16,
 }
 

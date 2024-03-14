@@ -1,6 +1,6 @@
-use std::fmt;
 use clap::ValueEnum;
 use serde::{Deserialize, Serialize};
+use std::fmt;
 
 #[derive(Default, Serialize, Deserialize, Clone, PartialEq, Eq, Debug, ValueEnum)]
 #[serde(rename_all = "kebab-case")]
@@ -67,7 +67,7 @@ impl Default for Config {
             log_level: LogLevel::Info,
             export_base_path: "export".into(),
             include_channels: vec!["general".into()],
-            request_delay: 1200
+            request_delay: 1200,
         }
     }
 }

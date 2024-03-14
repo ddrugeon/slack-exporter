@@ -1,23 +1,17 @@
-use std::error::Error;
 use figment::{
-    Figment,
     providers::{Env, Format, Serialized, Toml},
+    Figment,
 };
-
-// main.rs
-use crate::cli::Cli;
-use crate::config::Config;
-
-pub mod cli;
-pub mod config;
-mod logger;
+use slack_exporter::cli;
+use slack_exporter::config;
+use slack_exporter::logger;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
-    let conf: Config = Figment::new()
-        .merge(Toml::file("Config.toml"))
+async fn main() -> Result<(), figment::Error> {
+    let conf: config::Config = Figment::new()
+        .merge(Toml::file("../../Config.toml"))
         .merge(Env::prefixed("SLACK_"))
-        .merge(Serialized::defaults(Cli::from_env_and_args()))
+        .merge(Serialized::defaults(cli::Cli::from_env_and_args()))
         .extract()?;
 
     logger::initialize(&conf.log_level);

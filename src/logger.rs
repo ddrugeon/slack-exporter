@@ -1,8 +1,5 @@
-use flexi_logger::{
-    DeferredNow,
-    Duplicate,
-};
 use crate::config;
+use flexi_logger::{DeferredNow, Duplicate};
 
 /// Initializes our custom logger.
 /// Logs to stdout and stderr.

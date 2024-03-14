@@ -9,4 +9,3 @@ fn it_should_fails_with_no_args() {
         .failure()
         .stderr(predicate::str::contains("Usage"));
 }
-
