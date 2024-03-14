@@ -15,7 +15,7 @@ rust-version = "1.76.0"
 path = "src/lib.rs"
 
 [[bin]]
-path = "src/main.rs"
+path = "src/bin/main.rs"
 name = "slack-exporter"
 
 [dependencies]

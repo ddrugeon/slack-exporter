@@ -9,7 +9,7 @@ use slack_exporter::logger;
 #[tokio::main]
 async fn main() -> Result<(), figment::Error> {
     let conf: config::Config = Figment::new()
-        .merge(Toml::file("Config.toml"))
+        .merge(Toml::file("../../Config.toml"))
         .merge(Env::prefixed("SLACK_"))
         .merge(Serialized::defaults(cli::Cli::from_env_and_args()))
         .extract()?;
