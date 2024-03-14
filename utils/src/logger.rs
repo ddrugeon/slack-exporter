@@ -1,9 +1,9 @@
-use crate::config;
+use crate::types;
 use flexi_logger::{DeferredNow, Duplicate};
 
 /// Initializes our custom logger.
 /// Logs to stdout and stderr.
-pub fn initialize(level: &config::LogLevel) {
+pub fn initialize(level: &types::LogLevel) {
     flexi_logger::Logger::try_with_str(level.to_string())
         .unwrap()
         .log_to_stdout()

@@ -1,0 +1,18 @@
+[package]
+name = "cli"
+version = "0.1.0"
+authors = ["David Drugeon-Hamon <zebeurton@gmail.com>"]
+description = "CLI interface for slack-exporter"
+edition = "2021"
+
+[dependencies]
+utils = { path = "../utils" }
+core = { path = "../core" }
+clap_complete = "4.5.1"
+clap = { version = "4.5.2", features = ["derive", "env", "wrap_help", "cargo", "color", "help"] }
+serde = { version = "1.0.197", features = ["derive"] }
+dotenv = { version = "0.15.0", features = ["clap"] }
+
+[dev-dependencies]
+assert_cmd = "2.0.14"
+predicates = "3.1.0"
