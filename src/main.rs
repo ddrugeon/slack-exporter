@@ -1,14 +1,20 @@
-use utils::app_config::AppConfig;
+use std::str::FromStr;
 use utils::error::Result;
 use utils::logger;
+use utils::types::LogLevel;
 
 fn main() -> Result<()> {
-    let config_contents = include_str!("resources/default_config.toml");
-    AppConfig::init(Some(config_contents))?;
+    let cli = cli::Cli::from_env_and_args();
 
-    let config = AppConfig::fetch()?;
-    logger::initialize(&config.log_level);
+    let log_level_argument = cli.log_level.to_lowercase();
+    let log_level = LogLevel::from_str(log_level_argument.as_str()).unwrap_or(LogLevel::Info);
 
-    log::debug!("Log level: {}", config.log_level);
+    logger::initialize(&log_level);
+
+    log::debug!("Slack API Key: {}", &cli.api_key);
+    log::debug!("Output directory: {:?}", &cli.export_base_path);
+    log::debug!("Delay: {}", &cli.request_delay);
+    log::info!("Log Level: {}", &cli.log_level);
+
     Ok(())
 }

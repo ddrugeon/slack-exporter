@@ -45,15 +45,6 @@ impl Error {
     }
 }
 
-impl From<config::ConfigError> for Error {
-    fn from(err: config::ConfigError) -> Self {
-        Error {
-            msg: String::from("Config Error"),
-            source: Some(Box::new(err)),
-        }
-    }
-}
-
 impl From<std::io::Error> for Error {
     fn from(err: std::io::Error) -> Self {
         Error {

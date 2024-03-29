@@ -11,5 +11,4 @@ log = "0.4.21"
 clap = "4.5.2"
 serde = { version = "1.0.197", features = ["derive"] }
 thiserror = "1.0.58"
-config = "0.14.0"
 lazy_static = "1.4.0"
