@@ -1,6 +1,7 @@
 [package]
 name = "core"
 version = "0.1.0"
+authors = ["David Drugeon-Hamon <zebeurton@gmail.com>"]
 edition = "2021"
 description = "The application core code"
 

@@ -1,5 +1,4 @@
 use clap::Parser;
-use dotenv::dotenv;
 use serde::Serialize;
 use std::env;
 use std::path::PathBuf;
@@ -53,7 +52,7 @@ pub struct Cli {
 
 impl Cli {
     pub fn from_env_and_args() -> Self {
-        dotenv().ok();
+        dotenvy::dotenv().ok();
         Self::parse()
     }
 }

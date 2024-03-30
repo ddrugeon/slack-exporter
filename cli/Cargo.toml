@@ -11,7 +11,7 @@ core = { path = "../core" }
 clap_complete = "4.5.1"
 clap = { version = "4.5.2", features = ["derive", "string", "env", "wrap_help", "cargo", "color", "help"] }
 serde = { version = "1.0.197", features = ["derive"] }
-dotenv = { version = "0.15.0", features = ["clap"] }
+dotenvy = { version = "0.15.7", features = ["clap"] }
 
 [dev-dependencies]
 assert_cmd = "2.0.14"
