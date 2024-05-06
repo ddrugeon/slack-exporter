@@ -1,0 +1,15 @@
+[package]
+name = "utils"
+version = "0.1.0"
+edition = "2021"
+authors = ["David Drugeon-Hamon <zebeurton@gmail.com>"]
+description = "Various utilities and functionalities"
+
+[dependencies]
+flexi_logger = "0.27.4"
+log = "0.4.21"
+clap = "4.5.2"
+serde = { version = "1.0.197", features = ["derive"] }
+thiserror = "1.0.58"
+lazy_static = "1.4.0"
+dirs = "5.0.1"
