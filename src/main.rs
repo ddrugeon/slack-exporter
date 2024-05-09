@@ -14,7 +14,7 @@ fn main() -> Result<()> {
     log::debug!("Slack API Key: {}", &cli.api_key);
     log::debug!("Output directory: {:?}", &cli.export_base_path);
     log::debug!("Delay: {}", &cli.request_delay);
-    log::info!("Log Level: {}", &cli.log_level);
+    log::debug!("Log Level: {}", &cli.log_level);
 
     Ok(())
 }
