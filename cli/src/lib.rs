@@ -11,6 +11,7 @@ fn get_default_output_directory() -> PathBuf {
 }
 
 #[derive(Debug, Parser, Serialize)]
+#[command(arg_required_else_help(true))]
 pub struct Cli {
     /// Slack API Key
     #[arg(short = 'k', long = "api-key", env = "SLACK_API_KEY")]
@@ -45,7 +46,8 @@ pub struct Cli {
         short = 'l',
         long = "log-level",
         required = false,
-        default_value = "info"
+        default_value = "info",
+        env = "LOG_LEVEL"
     )]
     pub log_level: String,
 }
